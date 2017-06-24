@@ -3,22 +3,35 @@ body, html {
     overflow-y: hidden;
 }
 
-.scrollWindow{
+.scroll-window{
   flex: 1;
   height: 100vh;
   overflow-y: auto;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.displayWindow{
-flex:2;
-text-align: center;
-font-size: 24px;
+.display-window{
+  flex: 2;
+  text-align: center;
+  font-size: 24px;
 }
 
-.container{
+.app{
 display: flex;
-flex-direction: row;
+flex-direction: column;
+}
+
+.app-header{
+  height: 10vh;
+  width: 100%;
+  flex: 1;
+  background-color: #6ED9A0;
+}
+
+.app-wrapper{
+  display: flex;
 }
 
 .library {
@@ -27,7 +40,7 @@ flex-direction: row;
   justify-content: space-between;
 }
 
-.bookContainer{
+.book-container{
   display: flex;
   flex: 1;
   justify-content: center;
@@ -37,6 +50,6 @@ flex-direction: row;
   padding-right: 25px;
 }
 
-.bookContainer:hover {
+.book-container:hover {
   background-color: #848FA5;
 }

@@ -6,7 +6,7 @@ function Book(props){
     return (
       <div
       id={props.id}
-      className='bookContainer'
+      className='book-container'
       onClick={props.onClick}>
         <img src={props.info.imgPath} alt={props.info.title} />
       </div>
@@ -39,7 +39,7 @@ const books = [
    imgPath: './img/htwfaip.jpg'
  }];
 
-class Library extends Component {
+class App extends Component {
 
   constructor(props) {
     super(props);
@@ -82,16 +82,18 @@ class Library extends Component {
   render() {
     const { selectedBook } = this.state;
     return (
-      <div className={'container'}>
-        <div className={'scrollWindow'}>
-          <div className={'library'}>
-            {this.renderBooks()}
+      <div className='app'>
+        <div className='app-header'></div>
+        <div className='app-wrapper'>
+          <div className='scroll-window'>
+              {this.renderBooks()}
+          </div>
+          <div className='display-window'>
+            {this.renderBookInfo(selectedBook)}
           </div>
         </div>
-        <div className={'displayWindow'}>
-          {this.renderBookInfo(selectedBook)}
-        </div>
       </div>
+
     );
   }
 }
@@ -99,6 +101,6 @@ class Library extends Component {
 // ========================================
 
 ReactDOM.render(
-  <Library />,
+  <App />,
   document.getElementById('root')
 );
